@@ -4,12 +4,13 @@ on:
   push:
     branches:
       - main
+
 jobs:
   deploy:
     runs-on: self-hosted
     step:
       - name: Check out repository code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Stop and remove existing container
         run: docker compose down --rmi all
